@@ -27,7 +27,8 @@ jobs:
             done
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
-          path:"build"
+        with:
+          path: build
 
 # Deploy job
   deploy:
