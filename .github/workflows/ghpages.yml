@@ -22,13 +22,14 @@ jobs:
           make docs
       - name: Fix permissions
         run: |
-          chmod -c -R +rX "build/" | while read line; do
+          ls
+          chmod -c -R +rX "docs/build/" | while read line; do
             echo "::warning title=Invalid file permissions automatically fixed::$line"
             done
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: docs/build
 
 # Deploy job
   deploy:
