@@ -12,6 +12,8 @@ jobs:
         image: ultrazohm/ultrazohm_remote_container
     steps:
       - uses: actions/checkout@v3
+        with: 
+         lfs: 'true'
       - uses: actions/setup-python@v3
       - name: Install dependencies
         run: |
